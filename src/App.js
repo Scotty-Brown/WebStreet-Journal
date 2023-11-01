@@ -2,6 +2,7 @@ import './App.css';
 import { Router } from 'react-router-dom';
 import { fetchArticles } from './apiCalls';
 import { useEffect, useState } from 'react';
+import { sampleData } from './sampleData';
 
 function App() {
 
@@ -9,9 +10,10 @@ function App() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    fetchArticles()
-    .then(data => setArticles(data.articles))
-    .catch(error => setError(error.message))
+    // fetchArticles()
+    // .then(data => setArticles(data.articles))
+    // .catch(error => setError(error.message))
+    setArticles(sampleData.articles)
   }, [])
 
   return (
