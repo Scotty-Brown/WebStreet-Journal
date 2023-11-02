@@ -22,7 +22,7 @@ function App() {
     <div className='App'>
       <Header />
       <Routes>
-        <Route path='/' element={<ArticlePreview/>}/>
+        <Route path='/' element={<ArticlePreview articles={articles}/>}/>
       </Routes>
     </div>
   )
