@@ -1,0 +1,21 @@
+.article-preview-card {
+    display: flex;
+    width: 40em;
+    margin: 1em;
+    border: 1px solid black;
+}
+
+.article-preview-image {
+    max-width: 20vw;
+    max-height: 20vh;
+}
+
+.article-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-preview-actions {
+    display: flex;
+    flex-direction: column;
+}
