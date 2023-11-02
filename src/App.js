@@ -3,6 +3,7 @@ import { Router } from 'react-router-dom';
 import { fetchArticles } from './apiCalls';
 import { useEffect, useState } from 'react';
 import { sampleData } from './sampleData';
+import Header from './Components/Header/Header';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <div className='App'>
+      <Header />
       {/* <Router>
 
       </Router> */}
