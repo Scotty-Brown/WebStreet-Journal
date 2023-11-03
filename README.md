@@ -48,6 +48,8 @@ The learning goals include gaining competency with React fundatmentals, E2E test
 Wins:
 - Project planning, time management and practicing asking clarifying questions.
 - I broke up all of my major tasks into smaller, digestible pieces. This allowed me to iterate through the project without any major blockers.
+- This was only my second time working with Local Storage. Local Storage allowed me to maintain the data from the API in the event of an unintentded unmounting.
 
 Challenges:
 - One of my biggest challenges was determining the architecture of the app that made the most sense.
+
