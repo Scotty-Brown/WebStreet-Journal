@@ -43,7 +43,9 @@ const Bookmarks = () => {
       {!bookmarksContainer.length ? (
         <div className="empty-bookmarks">
           <p>Looks like you haven't bookmarked any articles yet!</p>
-          <button className='return-btn' onClick={returnHome}>Return Home</button>
+          <button className="return-btn" onClick={returnHome}>
+            Return Home
+          </button>
         </div>
       ) : (
         bookmarksContainer
