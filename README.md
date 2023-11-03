@@ -30,7 +30,7 @@ This 'Take Home Challenge' is part of Turing's School of Software and Design's M
 
 ## 📚 Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
-The learning goals include gaining competency with React fundatmentals, E2E testing with Cypress, project management, and creating multi-page UX using React Router. 
+The learning goal of this project is to simulate the flow of a 'Take Home Challenge' one might receive from a potential employer during the interview process. Key objectives include asking claryfing questions, project planning, and technical presentations. 
 
 ## 🖥️ Technologies Used
 <div align='center'>
