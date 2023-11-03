@@ -1,11 +1,15 @@
 .single-article-card {
     width: 100%;
     margin-top: 9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .single-article-details {
     margin: 5em;
     margin-top: 1em;
+    max-width: 50em;
 }
 
 .single-article-image {
@@ -20,4 +24,8 @@
   .single-article-card .single-article-details .article-content a {
     display: inline;
     margin-left: 10px;
+  }
+
+  .return-btn {
+    margin: 1em;
   }

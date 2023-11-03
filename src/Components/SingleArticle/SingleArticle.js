@@ -44,8 +44,8 @@ const SingleArticle = () => {
             Click to read more on wsj.com
           </a>
         </div>
-        <button onClick={returnHome}>Return Home</button>
-        <button onClick={returnToBookmarks}>Return to Bookmarks</button>
+        <button className='return-btn' onClick={returnHome}>Return Home</button>
+        <button className='return-btn' onClick={returnToBookmarks}>Return to Bookmarks</button>
       </div>
     </div>
   )
