@@ -14,7 +14,10 @@ function App() {
 
   useEffect(() => {
     // fetchArticles()
-    // .then(data => setArticles(data.articles))
+    // .then(data => {
+    //   localStorage.setItem('articleData', JSON.stringify(data.articles))
+    //   setArticles(data.articles)
+    // })
     // .catch(error => setError(error.message))
     localStorage.setItem('articleData', JSON.stringify(sampleData.articles))
     setArticles(sampleData.articles)

@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('checkArticlePreview', (card, imgUrl, title, author, description) => {
+
+    cy.wrap(card).find('.article-preview-image').should('have.attr', 'src', imgUrl)
+    cy.wrap(card).find('.flex-row p').should('contain', 'Bookmark to read later')
+    cy.wrap(card).find('h2').should('contain', title)
+    cy.wrap(card).find('.author').should('contain', author)
+    cy.wrap(card).find('.description').should('contain', description)
+  })

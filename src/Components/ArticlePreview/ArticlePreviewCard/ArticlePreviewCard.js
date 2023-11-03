@@ -55,8 +55,8 @@ const ArticlePreviewCard = ({ article, index, removeArticleFromBookmarks }) => {
           </div>
         )}
         <h2>{article.title}</h2>
-        <p>Author: {article.author}</p>
-        <p>{article.description}</p>
+        <p className='author'>Author: {article.author}</p>
+        <p className='description'>{article.description}</p>
         <Link to={`/${index}`}>Click to Read More...</Link>
       </div>
     </div>
