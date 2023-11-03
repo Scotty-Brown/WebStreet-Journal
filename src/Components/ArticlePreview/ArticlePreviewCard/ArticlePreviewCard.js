@@ -3,7 +3,7 @@ import './ArticlePreviewCard.css'
 import { BsBookmarkCheckFill, BsBookmarkCheck } from "react-icons/bs";
 import { useEffect, useState } from 'react';
 
-const ArticlePreviewCard = ({article, index}) => {
+const ArticlePreviewCard = ({article, index, removeArticleFromBookmarks}) => {
     const [bookmarked, setBookmarked] = useState(false)
 
     useEffect(() => {
@@ -22,6 +22,8 @@ const ArticlePreviewCard = ({article, index}) => {
         const currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || []
         const updatedBookmarks = currentBookmarks.filter(bookmark => bookmark.index !== index)
         localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks))
+        if (removeArticleFromBookmarks) {
+            return removeArticleFromBookmarks(index)}
         setBookmarked(false)
       }
 

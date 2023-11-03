@@ -5,21 +5,26 @@ import ArticlePreviewCard from '../ArticlePreview/ArticlePreviewCard/ArticlePrev
 
 const Bookmarks = () => {
     const [bookmarks, setBookmarks] = useState([])
-    const currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) 
+
     
 
 useEffect(() => {
-    setBookmarks(fetchBookmarksFromLocalStorage())
-}, [currentBookmarks])
+    fetchBookmarksFromLocalStorage()
+}, [])
 
 const fetchBookmarksFromLocalStorage = () => {
     const storedData = localStorage.getItem('bookmarks')
-    if (storedData) {
-      return JSON.parse(storedData)
+    if (storedData.length !== bookmarks.length) {
+        setBookmarks(JSON.parse(storedData))
     }
+}
+
+const removeArticleFromBookmarks = (articleIndex) => {
+    const updatedBookmarks = bookmarks.filter((bookmark) => bookmark.index !== articleIndex)
+    setBookmarks(updatedBookmarks)
   }
 
-  const bookmarksContainer = bookmarks?.map((article) => <ArticlePreviewCard key={article.index} article={article} index={article.index} />)
+  const bookmarksContainer = bookmarks?.map((article) => <ArticlePreviewCard key={article.index} article={article} index={article.index} removeArticleFromBookmarks={removeArticleFromBookmarks} />)
 
   return (
     <div className='article-container'>
