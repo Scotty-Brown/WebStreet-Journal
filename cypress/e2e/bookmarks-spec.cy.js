@@ -28,7 +28,7 @@ describe('Bookmarks', () => {
     cy.get('.bookmark-btn').first().click()
     cy.get('.empty-bookmarks').should('exist')
     cy.get('p').should('contain', 'Looks like you haven\'t bookmarked any articles yet!')
-    cy.get('.empty-bookmarks > a').click()
+    cy.get('.return-btn').click()
     cy.url().should('eq', 'http://localhost:3000/')
   })
 

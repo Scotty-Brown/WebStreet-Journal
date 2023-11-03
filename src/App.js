@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import { fetchArticles } from './apiCalls'
+// import { fetchArticles } from './apiCalls'
 import { useEffect, useState } from 'react'
 import { sampleData } from './sampleData'
 import Header from './Components/Header/Header'
@@ -10,7 +10,7 @@ import Bookmarks from './Components/Bookmarks/Bookmarks'
 
 function App() {
   const [articles, setArticles] = useState([])
-  const [error, setError] = useState('')
+  // const [error, setError] = useState('')
 
   useEffect(() => {
     // fetchArticles()
