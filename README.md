@@ -47,6 +47,9 @@ The learning goals include gaining competency with React fundatmentals, E2E test
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 Wins:
 - Project planning, time management and practicing asking clarifying questions.
+  - Project Planning - Notion
+  - Time Management - Google Calendar
+  - Wireframing - Miro
 - I broke up all of my major tasks into smaller, digestible pieces. This allowed me to iterate through the project without any major blockers.
 - This was only my second time working with Local Storage. Local Storage allowed me to maintain the data from the API in the event of an unintentded unmounting.
 
