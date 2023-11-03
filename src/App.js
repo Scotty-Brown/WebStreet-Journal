@@ -6,6 +6,7 @@ import { sampleData } from './sampleData';
 import Header from './Components/Header/Header';
 import ArticlePreview from './Components/ArticlePreview/ArticlePreview';
 import SingleArticle from './Components/SingleArticle/SingleArticle';
+import Bookmarks from './Components/Bookmarks/Bookmarks';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path='/' element={<ArticlePreview articles={articles}/>}/>
         <Route path='/:index' element={<SingleArticle />}/>
+        <Route path='/bookmarks' element={<Bookmarks/>}/>
       </Routes>
     </div>
   )

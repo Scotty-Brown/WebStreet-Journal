@@ -6,7 +6,8 @@ const ArticlePreviewCard = ({article, index}) => {
 
     const bookmarkArticle = () => {
         const currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || []
-        const updatedBookmarks = currentBookmarks.concat(article)
+        const articleWithIndex = { ...article, index: index }
+        const updatedBookmarks = currentBookmarks.concat(articleWithIndex)
         localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
     }
 
