@@ -25,7 +25,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<ArticlePreview articles={articles}/>}/>
-        <Route path='/:index' element={<SingleArticle articles={articles}/>}/>
+        <Route path='/:index' element={<SingleArticle />}/>
       </Routes>
     </div>
   )

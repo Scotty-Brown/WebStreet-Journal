@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import './SingleArticle.css'
 import { useEffect, useState } from 'react'
 
-const SingleArticle = ({articles}) => {
+const SingleArticle = () => {
     const [article, setArticle] = useState({})
     const index = useParams().index
 
@@ -17,7 +17,6 @@ const SingleArticle = ({articles}) => {
         }
       }
       
-
     return (
         <div className='single-article-card'>
         <img className='single-article-image' src={article.urlToImage} alt=''></img>
