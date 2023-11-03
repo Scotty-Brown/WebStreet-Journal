@@ -1,6 +1,6 @@
 import './Bookmarks.css'
 import { useEffect, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import ArticlePreviewCard from '../ArticlePreview/ArticlePreviewCard/ArticlePreviewCard'
 
 const Bookmarks = () => {
