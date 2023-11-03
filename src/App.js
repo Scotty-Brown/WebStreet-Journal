@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { sampleData } from './sampleData';
 import Header from './Components/Header/Header';
 import ArticlePreview from './Components/ArticlePreview/ArticlePreview';
+import SingleArticle from './Components/SingleArticle/SingleArticle';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     // fetchArticles()
     // .then(data => setArticles(data.articles))
     // .catch(error => setError(error.message))
+    localStorage.setItem('articleData', JSON.stringify(sampleData.articles))
     setArticles(sampleData.articles)
   }, [])
 
@@ -23,6 +25,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<ArticlePreview articles={articles}/>}/>
+        <Route path='/:index' element={<SingleArticle articles={articles}/>}/>
       </Routes>
     </div>
   )
