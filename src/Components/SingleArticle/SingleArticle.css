@@ -1,12 +1,23 @@
 .single-article-card {
-    width: 100%
+    width: 100%;
+    margin-top: 9em;
 }
 
 .single-article-details {
     margin: 5em;
+    margin-top: 1em;
 }
 
 .single-article-image {
     max-width: 50vw;
     max-height: 50vh;
 }
+
+.single-article-card .single-article-details .article-content p {
+    display: inline;
+  }
+  
+  .single-article-card .single-article-details .article-content a {
+    display: inline;
+    margin-left: 10px;
+  }
