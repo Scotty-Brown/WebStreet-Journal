@@ -1,21 +1,47 @@
 import { Link } from 'react-router-dom'
 import './ArticlePreviewCard.css'
 import { BsBookmarkCheckFill, BsBookmarkCheck } from "react-icons/bs";
+import { useEffect, useState } from 'react';
 
 const ArticlePreviewCard = ({article, index}) => {
+    const [bookmarked, setBookmarked] = useState(false)
 
+    useEffect(() => {
+
+    }, [bookmarked])
+    
     const bookmarkArticle = () => {
         const currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || []
-        const articleWithIndex = { ...article, index: index }
+        const articleWithIndex = { ...article, index: index, isBookmarked: true }
         const updatedBookmarks = currentBookmarks.concat(articleWithIndex)
-        localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
+        localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks))
+        setBookmarked(true)
     }
+
+    const removeBookmark = () => {
+        const currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || []
+        const updatedBookmarks = currentBookmarks.filter(bookmark => bookmark.index !== index)
+        localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks))
+        setBookmarked(false)
+      }
+
+      function isArticleBookmarked(index) {
+        const currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || []
+        return currentBookmarks.some((bookmark) => bookmark.index === index)
+      }
+
+      const isBookmarked = isArticleBookmarked(index)
 
     return (
         <div className='article-preview-card'>
             <img className='article-preview-image' src={article.urlToImage} alt=''></img>
             <div className='article-details'>
-                <button onClick={bookmarkArticle}>Bookmark</button>
+                {!isBookmarked ? (
+                    <button onClick={bookmarkArticle}>Bookmark</button>
+
+                ) : (
+                    <button onClick={removeBookmark}>Remove Bookmark</button>
+                )}
                 <h2>{article.title}</h2>
                 <p>{article.author}</p>
                 <p>{article.description}</p>

@@ -1,14 +1,16 @@
 import './Bookmarks.css'
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import ArticlePreviewCard from '../ArticlePreview/ArticlePreviewCard/ArticlePreviewCard'
 
 const Bookmarks = () => {
     const [bookmarks, setBookmarks] = useState([])
+    const currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) 
+    
 
 useEffect(() => {
     setBookmarks(fetchBookmarksFromLocalStorage())
-}, [])
+}, [currentBookmarks])
 
 const fetchBookmarksFromLocalStorage = () => {
     const storedData = localStorage.getItem('bookmarks')
@@ -17,20 +19,18 @@ const fetchBookmarksFromLocalStorage = () => {
     }
   }
 
-  const bookmarksContainer = bookmarks?.map((article) => <ArticlePreviewCard key={article.index} article={article} index={article.index}/>)
+  const bookmarksContainer = bookmarks?.map((article) => <ArticlePreviewCard key={article.index} article={article} index={article.index} />)
 
   return (
-    // <div className='article-container'>{bookmarksContainer}</div>
-
     <div className='article-container'>
-    {!bookmarks ? (
-      <>
-        <p>Looks like you haven't bookmarked any articles.</p>
-        <NavLink to='./'>Return home to add new Articles</NavLink>
-      </>
-    ) : (
-      bookmarksContainer
-    )}
+        {!bookmarksContainer.length ? (
+        <div className='empty-bookmarks'>
+            <p>Looks like you haven't bookmarked any articles yet!</p>
+            <NavLink to={'/'}>Return Home</NavLink>
+        </div>
+        ) : (
+        bookmarksContainer
+        )}
   </div>
 )
 
