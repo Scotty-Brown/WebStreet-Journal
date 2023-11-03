@@ -44,14 +44,20 @@ const ArticlePreviewCard = ({ article, index, removeArticleFromBookmarks }) => {
       ></img>
       <div className="article-details">
         {!isBookmarked ? (
-          <button onClick={bookmarkArticle}>Bookmark</button>
+          <div className='flex-row'>
+          <p>Bookmark to read later 👉🏼</p>
+          <button className='bookmark-btn' onClick={bookmarkArticle}>{<BsBookmarkCheck/>}</button>
+          </div>
         ) : (
-          <button onClick={removeBookmark}>Remove Bookmark</button>
+          <div className='flex-row'>
+            <p>All done! Click to remove 👉🏼</p>
+          <button className='bookmark-btn' onClick={removeBookmark}>{<BsBookmarkCheckFill/>}</button>
+          </div>
         )}
         <h2>{article.title}</h2>
-        <p>{article.author}</p>
+        <p>Author: {article.author}</p>
         <p>{article.description}</p>
-        <Link to={`/${index}`}>Read More...</Link>
+        <Link to={`/${index}`}>Click to Read More...</Link>
       </div>
     </div>
   )
