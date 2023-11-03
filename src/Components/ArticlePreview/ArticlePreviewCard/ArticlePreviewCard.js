@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import './ArticlePreviewCard.css'
 import { BsBookmarkCheckFill, BsBookmarkCheck } from "react-icons/bs";
 
-const ArticlePreviewCard = ({article}) => {
-
+const ArticlePreviewCard = ({article, index}) => {
+    console.log(index)
     return (
         <div className='article-preview-card'>
             <img className='article-preview-image' src={article.urlToImage} alt=''></img>
@@ -11,6 +11,7 @@ const ArticlePreviewCard = ({article}) => {
                 <h2>{article.title}</h2>
                 <p>{article.author}</p>
                 <p>{article.description}</p>
+                <Link to={`/${index}`}>click me</Link>
             </div>
         </div>
     )
